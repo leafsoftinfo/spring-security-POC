@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.acss.poc.account.Account;
-import com.acss.poc.account.IAccountRepository;
+import com.acss.poc.account.IAccountService;
 
 /**
  * Custom service which implements the {@link UserDetailsService}
@@ -18,15 +18,15 @@ import com.acss.poc.account.IAccountRepository;
 @Service
 public class UserService implements UserDetailsService {
 	
-	private IAccountRepository accountRepository;
+	private IAccountService accountService;
 	
 	@Autowired
-	public UserService(IAccountRepository accountRepository){
-		this.accountRepository = accountRepository;
+	public UserService(IAccountService accountService){
+		this.accountService = accountService;
 	}
 	
 	public Account findByUsername(String username){
-		return accountRepository.findByUserName(username);
+		return accountService.findByUsername(username);
 	}
 	
 	
@@ -34,7 +34,7 @@ public class UserService implements UserDetailsService {
 	 * For Spring Security
 	 */
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Account account = accountRepository.findByUserName(username);
+		Account account = accountService.findByUsername(username);
 		if(account == null) {
 			throw new UsernameNotFoundException("user not found");
 		}

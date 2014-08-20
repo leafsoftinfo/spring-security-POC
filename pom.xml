@@ -16,7 +16,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<!-- Spring -->
-		<spring-framework.version>3.2.5.RELEASE</spring-framework.version>
+		<spring-framework.version>4.0.3.RELEASE</spring-framework.version>
 
 		<!-- Hibernate / JPA -->
 		<hibernate.version>4.2.1.Final</hibernate.version>
@@ -36,13 +36,6 @@
 		<!-- Tiles version -->
 		<tiles.version>3.0.1</tiles.version>
 		
-		<!-- Database access -->
-		<tomcat-jdbc.version>7.0.42</tomcat-jdbc.version>
-		<ehcache.version>2.6.8</ehcache.version>
-		<hsqldb.version>2.3.1</hsqldb.version>
-		<jooq.version>3.2.2</jooq.version>
-        <jooq.generator.db.dialect>org.jooq.util.h2.H2Database</jooq.generator.db.dialect>
-        
         <!--Maven compiler version  -->
 		<build.plugins.plugin.version>3.0</build.plugins.plugin.version>
 	</properties>
@@ -152,15 +145,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
-		<!-- Data Source Dependencies -->
-		<dependency>
-			<groupId>org.apache.tomcat</groupId>
-			<artifactId>tomcat-jdbc</artifactId>
-			<version>${tomcat-jdbc.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		
+
 		<!-- For Tiles View Dependencies  -->
 
 		<dependency>
@@ -223,20 +208,6 @@
 		</dependency>
             
 		
-		<!-- jOOQ -->
-        <dependency>
-            <groupId>org.jooq</groupId>
-            <artifactId>jooq</artifactId>
-            <version>${jooq.version}</version>
-        </dependency>
-        
-        <!-- hsqldb Database -->
-        <dependency>
-        	<groupId>org.hsqldb</groupId>
-        	<artifactId>hsqldb</artifactId>
-        	<version>${hsqldb.version}</version>
-        </dependency>
-        
         <!-- CG Lib  -->
         <dependency>
             <groupId>cglib</groupId>
@@ -301,6 +272,11 @@
         	<version>2.5</version>
         	<scope>provided</scope>
         </dependency>
+		<dependency>
+			<groupId>com.acss.kaizen</groupId>
+			<artifactId>jooq.poc</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>	
   <build>
     <finalName>springSecurityPOC</finalName>

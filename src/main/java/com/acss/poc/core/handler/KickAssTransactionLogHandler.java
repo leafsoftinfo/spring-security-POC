@@ -42,7 +42,7 @@ public class KickAssTransactionLogHandler {
 		builder.append("Domain : "+bean.toString());
 		@SuppressWarnings("unchecked")
 		Map<String, Object> properties = BeanUtils.describe(bean);
-		//exluded fields.
+		//excluded fields.
 		properties.remove("class");
 		properties.remove("password");
 		

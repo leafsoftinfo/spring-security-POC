@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.acss.kaizen.jooq.poc.base.ReadOnlyRepository;
 import com.acss.poc.core.AwesomeBaseController;
 import com.acss.poc.main.exception.MenuServiceException;
 
@@ -21,12 +22,14 @@ import com.acss.poc.main.exception.MenuServiceException;
 public class AccountController extends AwesomeBaseController{
 	
     private IAccountService accountService;
-	
-	public AccountController(){}
-	
     @Autowired
-	public AccountController(IAccountService accountService) {
-        this.accountService = accountService;
+    private ReadOnlyRepository<com.acss.kaizen.jooq.poc.account.Account, Long> accountRepo;
+    
+	public AccountController(){}
+
+    @Autowired
+	public AccountController(IAccountService accountService){
+    	this.accountService = accountService;
     }
     
     /**
@@ -34,11 +37,16 @@ public class AccountController extends AwesomeBaseController{
      * @param principal
      * @return
      */
-    @Secured("ROLE_USER")
+	@Secured("ROLE_USER")
     @RequestMapping(value = "current", method = RequestMethod.GET)
     public String accounts(Principal principal,ModelMap model) {
         Assert.notNull(principal);
         model.addAttribute("account",accountService.findByUsername(principal.getName()));
+		/*
+        ReadOnlyRepository<com.acss.kaizen.jooq.poc.account.Account, Long> accountRepo = 
+				(ReadOnlyRepository<com.acss.kaizen.jooq.poc.account.Account, Long>) ctx.getBean("accountRepository");
+        */
+        Assert.notNull( accountRepo.findById(1L));
         return "accountpage";
     }
     

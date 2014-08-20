@@ -63,7 +63,7 @@ public class KickAssCentralExceptionHandler {
         return view;
     }
     
-    @Around("execution(* com.acss.poc.*..AccountRepository+.find*(..)) && target(repo)")
+    @Around("execution(* com.acss.poc.*..AccountJdbcRepository+.find*(..)) && target(repo)")
     public Account handleRepoException(ProceedingJoinPoint jp, Object repo) throws Throwable {
         Message msg = new Message();
         Account returnAccount = null;
@@ -75,9 +75,6 @@ public class KickAssCentralExceptionHandler {
             msg.setIsError(Message.TRUE);
             return null;
         }catch (EmptyResultDataAccessException e) {
-//            errorLogger.error("error in {}", repo.getClass().getSimpleName(), e);
-//            msg.setInfo(e.getMessage());
-//            msg.setIsError(Message.TRUE);
             return null;
 		}catch (BadSqlGrammarException e) {
             errorLogger.error("error in {}", repo.getClass().getSimpleName(), e);

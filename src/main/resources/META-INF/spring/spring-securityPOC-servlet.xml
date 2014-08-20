@@ -76,7 +76,7 @@
 			</property>
 		</bean>
 	</beans>
-	
+		
 	<beans profile="test">
 		<!-- Declare a view resolver -->
 		<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
