@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import com.acss.hps.core.ValidationResult;
 import com.acss.poc.account.IAccountService;
-import com.acss.poc.core.ValidationResult;
 
 @Controller
 @RequestMapping("remote")

@@ -32,10 +32,10 @@
 		<security:logout logout-url="/logout"
 			invalidate-session="true" 
 			logout-success-url="/auth/logout" />
-		<security:session-management
-			session-authentication-error-url="/auth/session-failed">
-			<security:concurrency-control max-sessions="1" expired-url="/auth/session-failed"/>
-		</security:session-management>
+<!-- 		<security:session-management -->
+<!-- 			session-authentication-error-url="/auth/session-failed"> -->
+<!-- 			<security:concurrency-control max-sessions="1" expired-url="/auth/session-failed"/> -->
+<!-- 		</security:session-management> -->
 	</security:http>
 	
 	<!-- Declare an authentication-manager to use a custom userDetailsService 

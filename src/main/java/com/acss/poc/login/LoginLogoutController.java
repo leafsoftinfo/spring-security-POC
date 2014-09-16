@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.acss.hps.core.AwesomeBaseController;
 import com.acss.poc.account.Account;
-import com.acss.poc.core.AwesomeBaseController;
 
 /**
  * Handles and retrieves the login or denied page depending on the URI template

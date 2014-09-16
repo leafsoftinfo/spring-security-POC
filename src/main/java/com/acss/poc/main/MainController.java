@@ -9,7 +9,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.acss.poc.core.AwesomeBaseController;
+import com.acss.hps.core.AwesomeBaseController;
+
 
 /**
  * Handles and retrieves the common or admin page depending on the URI template.

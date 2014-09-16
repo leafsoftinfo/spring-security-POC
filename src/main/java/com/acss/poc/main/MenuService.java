@@ -11,7 +11,8 @@ import javax.xml.bind.Unmarshaller;
 
 import org.springframework.core.io.Resource;
 
-import com.acss.poc.main.exception.MenuServiceException;
+import com.acss.hps.core.exception.MenuServiceException;
+
 
 /**
  * Contains the Java representation of the menu-definition.xml

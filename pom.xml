@@ -16,7 +16,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<!-- Spring -->
-		<spring-framework.version>3.2.5.RELEASE</spring-framework.version>
+		<spring-framework.version>4.0.3.RELEASE</spring-framework.version>
 
 		<!-- Hibernate / JPA -->
 		<hibernate.version>4.2.1.Final</hibernate.version>
@@ -301,6 +301,14 @@
         	<version>2.5</version>
         	<scope>provided</scope>
         </dependency>
+        
+        <dependency>
+			<groupId>com.acss.kaizen</groupId>
+			<artifactId>com.acss.hps.core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        
+        
 	</dependencies>	
   <build>
     <finalName>springSecurityPOC</finalName>
