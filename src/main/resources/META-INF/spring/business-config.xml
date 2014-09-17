@@ -17,6 +17,7 @@
     	-->
     	
     	<context:component-scan base-package="com.acss.*"/>
+    	<bean class="com.acss.kaizen.jooq.poc.configuration.PersistenceContext" />
 		<context:annotation-config/>
     	<bean id="menuService" class="com.acss.poc.main.MenuService"
 		p:file="classpath:/META-INF/props/menu-definitions.xml"/>
