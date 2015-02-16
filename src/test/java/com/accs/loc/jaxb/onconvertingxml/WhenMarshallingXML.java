@@ -31,7 +31,7 @@ public class WhenMarshallingXML {
         marshaller.marshal(a, System.out);
         
         //assert 2 is the default written on the xml.
-        assertEquals(2,a.getMenuItems().size());
+        assertEquals(3,a.getMenuItems().size());
         
         for(MenuItem menu : a.getMenuItems()){
         	if(menu.hasChildren()){
